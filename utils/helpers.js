@@ -1,43 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
 import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { white } from './colors'
+import { white, gray } from './colors'
 
 export function getMetricMetaInfo(metric) {
-  state = {
-    run: 0,
-    bike: 0,
-    swim: 0,
-    sleep: 0,
-    eat: 0,
-  }
-  increment = (metric) => {
-    const { max, step } = getMetricMetaInfo(metric)
 
-    this.setState((state) => {
-      const count = state[metric] + step
-
-      return {
-        ...state,
-        [metric]: count > max ? max : count,
-      }
-    })
-  }
-  decrement = (metric) => {
-    this.setState((state) => {
-      const count = state[metric] - getMetricMetaInfo(metric).step
-
-      return {
-        ...state,
-        [metric]: count < 0 ? 0 : count,
-      }
-    })
-  }
-  slide = (metric, value) => {
-    this.setState(() => ({
-      [metric]: value
-    }))
-  }
   const info = {
     run: {
       displayName: 'Run',
@@ -50,7 +17,7 @@ export function getMetricMetaInfo(metric) {
           <View>
             <MaterialIcons
               name='directions-run'
-              color={white}
+              color={gray}
               size={35}
             />
           </View>
@@ -68,7 +35,7 @@ export function getMetricMetaInfo(metric) {
           <View>
             <MaterialCommunityIcons
               name='bike'
-              color={white}
+              color={gray}
               size={32}
             />
           </View>
@@ -86,7 +53,7 @@ export function getMetricMetaInfo(metric) {
             <View>
               <FontAwesome
                 name='bed'
-                color={white}
+                color={gray}
                 size={30}
               />
             </View>
@@ -104,7 +71,7 @@ export function getMetricMetaInfo(metric) {
           <View>
             <MaterialCommunityIcons
               name='food'
-              color={white}
+              color={gray}
               size={35}
             />
           </View>
