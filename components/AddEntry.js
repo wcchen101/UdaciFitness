@@ -6,6 +6,7 @@ import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import { Ionicons } from '@expo/vector-icons'
 import TextButton from './TextButton'
+import { submitEntry, removeEntry } from '../utils/api'
 
 function SubmitBtn({ onPress }) {
   return (
@@ -35,9 +36,9 @@ export default class AddEntry extends Component {
       sleep: 0,
       eat: 0,
     }))
-    //Navigate to hoe
+    //Navigate to home
 
-    //Save to 'db'
+    submitEntry({key, entry})
 
     //Clear location notification
   }
@@ -74,7 +75,7 @@ export default class AddEntry extends Component {
 
     // Route to Home
 
-    // Update "DB"
+    removeEntry(key)
   }
   render() {
     const metaInfo = getMetricMetaInfo()
