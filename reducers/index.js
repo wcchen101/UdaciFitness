@@ -5,12 +5,12 @@ function entries(state = {}, action ) {
     case RECEIVE_ENTRIES:
       return {
         ...state,
-        ...acion.entries,
+        ...action.entries,
       }
     case ADD_ENTRY:
       return {
         ...state,
-        ...aciton.entry
+        ...action.entry
       }
     default:
       return state
