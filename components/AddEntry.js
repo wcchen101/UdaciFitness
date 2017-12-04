@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native'
-import { getMetricMetaInfo, timeToString, getDailyReminderValue } from '../utils/helpers'
+import { getMetricMetaInfo, timeToString, getDailyReminderValue, clearLocalNotification, setLocalNotification } from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
@@ -51,7 +51,8 @@ class AddEntry extends Component {
 
     submitEntry({key, entry})
 
-    //Clear location notification
+    clearLocalNotification()
+      .then(setLocalNotification)
   }
   increment = (metric) => {
     const { max, step } = getMetricMetaInfo(metric)
